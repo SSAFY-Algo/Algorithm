@@ -9,6 +9,7 @@ ex. SWEA_1208_Flatten_200802
 * 사이트 별 약어
   * BOJ : 백준 온라인 저지
   * SWEA : SW Expert Academy
+  * JO : 정올
   * PROG : 프로그래머스
   
 ## 커밋 메시지 규칙
