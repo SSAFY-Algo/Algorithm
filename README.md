@@ -28,20 +28,25 @@ ex. Algorithm / 200817 / Dawoon / BOJ_2178_미로탐색_200814
 ## 명령어 정보
 
 * 커밋할 때
+
  git add .  or git add 파일이름
  git commit -m "커밋메세지"
  git push
  
 * 브랜치 생성
+
  git branch 브랜치 이름
  
 * 브랜치로 이동 or 마스터로 이동
+
  git checkout 브랜치 이름  or git checkout master
  
 * 브랜치 삭제
+
  git branch -d 브랜치 이름
  
 * master에 머지
+
  git checkout master 한 뒤에 마스터에 가서!!!
  git merge 자기 브랜치 이름
  
