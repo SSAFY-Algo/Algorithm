@@ -41,3 +41,9 @@ ex. Algorithm / 200817 / Dawoon / BOJ_2178_미로탐색_200814
 * 브랜치 삭제
  git branch -d 브랜치 이름
  
+* master에 머지
+ git checkout master 한 뒤에 마스터에 가서!!!
+ git merge 자기 브랜치 이름
+ 
+**브랜치를 merge 한 다음에는 자기 브랜치를 삭제하고 5명 모두가 머지된 마스터 상태에서 다시 브랜치를 파는게 좋음!**
+ 
