@@ -1,35 +1,32 @@
-package baekjoon;
-
+package com.ssafy;
 import java.util.Scanner;
 
-public class boj_1934 {
+public class BOJ_1934_ìµœì†Œê³µë°°ìˆ˜_200803 {
+
 	public static void main(String[] args) {
-		// À¯Å¬¸®µå È£Á¦¹ý »ç¿ë
 		Scanner sc = new Scanner(System.in);
-		
 		int T = sc.nextInt();
 		
-		for(int tc=0; tc<T; tc++) {
-			int a = sc.nextInt();
-			int b = sc.nextInt();
-			int gcd = 0; // ÃÖ´ë°ø¾à¼ö
-			int lcm = 0; // ÃÖ¼Ò°ø¹è¼ö
-			gcd = gcd(Math.max(a, b), Math.min(a, b));
-			lcm = lcm(gcd, a, b);
-			System.out.println(lcm);
+		for (int i = 0; i < T; i++) {
+			int num1 = sc.nextInt();
+			int num2 = sc.nextInt();
+			
+			System.out.println((num1 * num2) / calc(num1, num2));
+			
 		}
+		
+
 	}
 	
-	static int gcd(int a, int b) {
-		if(a%b==0) {
-			return b;
+	private static int calc(int num1, int num2) {
+		
+		if(num2 == 0) {
+			return num1;
 		}
-		return gcd(b, a%b);
+		else {
+			return calc(num2,num1%num2);
+		}
+		
 	}
-	
-	static int lcm(int gcd, int a, int b) {
-		int aa = a/gcd;
-		int bb = b/gcd;
-		return gcd*aa*bb;
-	}
+
 }

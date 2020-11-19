@@ -1,52 +1,31 @@
-package baekjoon;
+package practice;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
-public class boj_1978_¼Ò¼öÃ£±â {
-	
-	static int N = 1001;
-	static boolean[] base = new boolean[N+1]; // 1ºÎÅÍ 1000±îÁöÀÇ ¼ıÀÚ ¹è¿­, false·Î ÃÊ±âÈ­
-	
-	public static void main(String[] args) throws IOException {
-		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer tk = new StringTokenizer(bf.readLine());
+public class BOJ_1978_ì†Œìˆ˜ì°¾ê¸°_200808 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
 		
-		int range = Integer.parseInt(tk.nextToken());
-		int[] array = new int[range];
-
-		int count = 0;
+		int N = sc.nextInt();
+		int[] arr = new int[N];
+		int answer = 0;
 		
-		chk_prime();
-		
-		tk = new StringTokenizer(bf.readLine());
-		
-		for(int i=0; i<range; i++) {
-			array[i]=Integer.parseInt(tk.nextToken());
-			
-			if(base[array[i]]) continue;
-			else count++;
-
+		for(int i = 0; i < N; i++) {
+			arr[i] = sc.nextInt();
 		}
 		
-		System.out.println(count);
-		
-	}
-	
-	static boolean chk_prime() {
-		// N±îÁö ¼Ò¼ö¸¦ Á¦¿ÜÇÑ ¹è¼ö¿¡´Â base¹è¿­¿¡ true°ª ÀúÀå
-		
-		base[0]=base[1]=true;
-		// 2 indexºÎÅÍ
-		for(int i=2; i<N;i++) {
-			for(int j=i; j<N; j++) {
-				if(i*j>N) break;
-				base[i*j]=true;
+		for(int i = 0; i<N; i++) {
+			int a = arr[i];
+			int cnt = 0;
+			for(int j=1; j<=a; j++) {
+				if(a%j == 0)
+					cnt++;
+				if(cnt > 2) break;
 			}
+			if(cnt == 2) answer++;
 		}
-		return true;
+		
+		System.out.println(answer);
 	}
-	
+
 }
