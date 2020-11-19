@@ -1,70 +1,84 @@
-package BFS_DFS;
+package baekjoon;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class BOJ_1012_Ïú†Í∏∞ÎÜçÎ∞∞Ï∂î {
+class Baechoo {
+	int x, y;
 
-	static int tc,N,M,K,X,Y,cnt=0;
-	static int map[][];
-	static int dir[][]= {{-1,0},{1,0},{0,1},{0,-1}};
-	static boolean visited[][];
-	static int res[];
-	public static void main(String[] args) throws IOException{
-		// TODO Auto-generated method stub
-		BufferedReader bf=new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st;
-		tc=Integer.parseInt(bf.readLine());
-		res=new int[tc]; //Í≤∞Í≥ºÍ∞í Ï†ÄÏû•
-		for(int t=0;t<tc;t++) {
-			int cnt=0;
-			st=new StringTokenizer(bf.readLine());
-			M=Integer.parseInt(st.nextToken());
-			N=Integer.parseInt(st.nextToken());
-			K=Integer.parseInt(st.nextToken());
-			map=new int[N][M];
-			visited=new boolean[N][M];
+	public Baechoo(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
+}
+
+public class BOJ_1012_¿Ø±‚≥ÛπË√ﬂ {
+	
+	static int[] dx = {-1, 1, 0, 0}; // ªÛ, «œ, ¡¬, øÏ
+	static int[] dy = {0, 0, -1, 1};
+	static int col, row, count, baecho_num;
+	static int[][] map;
+ 	
+	public static void main(String[] args) throws IOException {
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer tk = new StringTokenizer(bf.readLine());
+		
+		int T = Integer.parseInt(tk.nextToken());
+		
+		for(int tc=0; tc<T; tc++) {
+			tk = new StringTokenizer(bf.readLine());
+			col = Integer.parseInt(tk.nextToken());
+			row = Integer.parseInt(tk.nextToken());
+			baecho_num = Integer.parseInt(tk.nextToken());
+			map = new int[row][col];
+			count = 0;
 			
-			for(int k=0;k<K;k++) {
-				st=new StringTokenizer(bf.readLine());
-				X=Integer.parseInt(st.nextToken());
-				Y=Integer.parseInt(st.nextToken());
-				map[Y][X]=1;
+ 			// πË√ﬂ Ω…¿∫ ¿⁄∏Æø° 1 setting
+			for(int bc=0; bc<baecho_num; bc++) {
+				tk = new StringTokenizer(bf.readLine());
+				int y = Integer.parseInt(tk.nextToken());
+				int x = Integer.parseInt(tk.nextToken());
+				
+				map[x][y]=1;
 			}
-
-			for(int i=0;i<N;i++) {
-				for(int j=0;j<M;j++) {
-					if(map[i][j]==1&&!visited[i][j]) {
-						dfs(i,j);
-						cnt++;
+			
+			for(int i=0; i<row; i++) {
+				for(int j=0; j<col; j++) {
+					if(map[i][j]==1) {
+						count++;
+						bfs(i, j);
 					}
 				}
 			}
-			res[t]=cnt;
+			System.out.println(count);
 		}
-		for(int i=0;i<res.length;i++)
-			System.out.println(res[i]);
-		
 	}
 	
-	private static void dfs(int r,int c) {
-		visited[r][c]=true;
-		int nr,nc;
-		for(int i=0;i<dir.length;i++) {
-			nr=r+dir[i][0];
-			nc=c+dir[i][1];
-			if(nr>=0&&nr<N&&nc>=0&&nc<M) {
-				if(map[nr][nc]==1&&!visited[nr][nc]) {
-					dfs(nr,nc);
-					
+	static void bfs(int a, int b) {
+		Queue<Baechoo> q = new LinkedList<Baechoo>();
+		q.add(new Baechoo(a, b));
+		map[a][b]=0;
+		
+		while(!q.isEmpty()) {
+			Baechoo bc = q.poll();
+			int x = bc.x;
+			int y = bc.y;
+			
+			for(int k=0; k<4; k++) {
+				int nx = x + dx[k];
+				int ny = y + dy[k];
+				
+				if(nx<0 || nx>=row || ny<0 || ny>=col || map[nx][ny]==0) continue;
+				else {
+					q.add(new Baechoo(nx, ny));
+					map[nx][ny]=0;
 				}
 			}
-			
 		}
 		
-		
 	}
-
 }
