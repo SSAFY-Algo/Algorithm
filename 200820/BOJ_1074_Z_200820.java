@@ -45,6 +45,7 @@ public class BOJ_1074_Z {
 			} else if (r >= s && c >= s) {	// 4 사분면
 				mul=3;
 			}
+			
 			r%=s;
 			c%=s;
 			
