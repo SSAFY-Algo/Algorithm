@@ -1,0 +1,19 @@
+class Solution {
+    public int[] solution(int brown, int yellow) {
+        int[] answer = new int[2];
+        int total=brown+yellow;
+        //r,c는 무조건 3이상
+        for(int r=3;r<brown;r++){
+            for(int c=3;c<brown;c++){
+                if(r*c==total){
+                    if((r<=c)&&(2*(r+c)-4)==brown&&((r-2)*(c-2))==yellow){
+                        answer[0]=c;
+                        answer[1]=r;
+                        break;
+                    }
+                }
+            }
+        }
+        return answer;
+    }
+}
