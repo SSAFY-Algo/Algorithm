@@ -7,6 +7,7 @@ class Solution {
         //한칸씩 이동하면서
         for(int i=0;i<locklen+keylen-1;i++){
             for(int j=0;j<locklen+keylen-1;j++){
+
                 for(int d=0;d<4;d++){
                     
                     int map[][]=new int[locklen+(keylen-1)*2][locklen+(keylen-1)*2];
