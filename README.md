@@ -1,8 +1,16 @@
-# Algorithm
+# SSAFY 알고리즘 스터디 - 스터디원 모두 취뽀하는 그날까지✊
 
-## 파일 명명 규칙
+😃😃😃😃😃🧑‍🎓🧑‍🎓
+현재 2명이 취뽀하였습니다.
 
-[사이트 이름][문제 번호]_[문제 이름]
+> [현재까지 푼 알고리즘 문제 목록 🔗](https://docs.google.com/spreadsheets/d/16LoykaYoboSiOO7Jqb9nK38iRzHPU7XgXSmZeUBJ5tM/edit#gid=0)
+## 🧞Rules
+
+[2021년 4월 16일 개편사항](https://github.com/SSAFY-Algo/Algorithm/issues/123)
+
+### 파일명 컨벤션
+
+> [사이트 이름][문제 번호]_[문제 이름]
 
 ex. SWEA1208_Flatten
 
@@ -12,20 +20,19 @@ ex. SWEA1208_Flatten
   * JO : 정올
   * PROG : 프로그래머스
   
-## 커밋 메시지 규칙
+### 커밋 컨벤션
 
-문제푼날짜 사이트이름 문제번호 문제이름[난이도]
+> 문제푼날짜 사이트이름 문제번호 문제이름
 
-ex. 200802 SWEA 1208 Flatten[D3]
+ex. 200802 SWEA 1208 Flatten
 
-## 파일 경로
-Algorithm / '알고리뷰날짜' / '자기 브랜치 이름 or 알아서' / 알고리즘 java 파일들
+### 파일 경로
+
+> Algorithm / 스터디날짜 / 자기 브랜치 이름 / 파일
 
 ex. Algorithm / 200817 / Dawoon / BOJ_2178_미로탐색
 
-알고리즘 리뷰날짜 전까지 다 풀고 commit & push & merge 까지!!
-
-## 명령어 정보
+## 🧚‍♀️Git 명령어 정보
 
 * 커밋할 때
 	```vim
@@ -48,11 +55,11 @@ ex. Algorithm / 200817 / Dawoon / BOJ_2178_미로탐색
 	```
 	
 * 브랜치 삭제
-
+	```vim
     git branch -d 브랜치 이름
- 
-* master에 머지
+ 	```
 
+* master에 머지
 	```vim
     git checkout master 한 뒤에 
     git merge 브랜치 이름
